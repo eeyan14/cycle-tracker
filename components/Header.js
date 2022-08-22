@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import colors from "../helpers/colors";
 
 export default function Header() {
   const { height } = useWindowDimensions();
@@ -12,12 +13,12 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#354e78",
+    backgroundColor: colors.main,
     alignItems: "center",
     justifyContent: "center",
   },
   headerText: {
     fontSize: 24,
-    color: "#fff",
+    color: colors.white,
   },
 });

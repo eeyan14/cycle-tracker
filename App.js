@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 import Header from "./components/Header";
 import Calendar from "./components/Calendar";
-import YesNo from "./components/YesNo";
+import Toggle from "./components/Toggle";
 
 import { retrieveData, storeData } from "./helpers/dataHelpers";
 
@@ -33,13 +33,18 @@ export default function App() {
     storeData(STORAGE_KEY, updatedData);
   };
 
+  const handleSelectDay = (day) => {
+    setCurrentDate(day.dateString);
+  };
+
   useEffect(() => {
     const date = new Date();
     const [year, month, day] = [
       date.getFullYear().toString(),
-      date.getMonth().toString().padStart(2, "0"),
+      (date.getMonth() + 1).toString().padStart(2, "0"), // months are 0-indexed
       date.getDate().toString().padStart(2, "0"),
     ];
+    console.log("what?", `${year}-${month}-${day}`);
     setCurrentDate(`${year}-${month}-${day}`);
     initCycleData();
   }, []);
@@ -48,8 +53,8 @@ export default function App() {
     <View style={styles.container}>
       <Header />
       <View style={styles.mainContent}>
-        <Calendar cycleData={Object.keys(cycleData)} />
-        <YesNo
+        <Calendar cycleData={cycleData} onSelectDay={handleSelectDay} />
+        <Toggle
           cycleData={cycleData}
           date={currentDate}
           label={currentDate}
