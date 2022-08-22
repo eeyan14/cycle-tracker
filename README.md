@@ -1,5 +1,7 @@
 # cycle-tracker
 
+A React Native app for _very_ basic period tracking.
+
 ## New Project Setup Tips / Troubleshooting
 
 - To create a new app, run `npx create-expo-app [folder name]`
@@ -7,6 +9,8 @@
 - To generate native iOS and Android apps for your project, run `npx expo prebuild`
 
   - You may need install Java and set the `$JAVA_HOME` environment variable, follow the steps here (but use openjdk-11-jdk): https://kontext.tech/article/621/install-open-jdk-on-wsl
+
+- To view logs (via `console.log()`, `console.warn()`), run `react-native log-android`
 
 ## Debugging local Android in Windows
 
@@ -48,4 +52,4 @@ References:
 
      Then reconnect your device.
 
-8. To run the development server on your connected device, run `adb -s [device name] reverse tcp:8081 tcp:8081`, where `device name` is `[phone IP]:5555`
+8. Run `npx react-native start` to start the development server.
