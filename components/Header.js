@@ -14,6 +14,7 @@ export default function Header() {
         style={{
           height: 50,
           resizeMode: "contain",
+          marginVertical: 20,
         }}
       />
     </View>

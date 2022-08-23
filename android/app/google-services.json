@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035785243896",
+    "project_id": "cycle-tracker-b5b33",
+    "storage_bucket": "cycle-tracker-b5b33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035785243896:android:6638e6c92af22ea1bbff0d",
+        "android_client_info": {
+          "package_name": "com.anonymous.cycletracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035785243896-1q3n0fg02gs8snkmk9itoogh73ma36h8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBENZEwizkNIH6ADxJR4bOC_qi3SXMAWuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035785243896-1q3n0fg02gs8snkmk9itoogh73ma36h8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

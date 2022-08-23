@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import Header from "./components/Header";
 import Calendar from "./components/Calendar";
 import Toggle from "./components/Toggle";
 
 import { retrieveData, storeData } from "./helpers/dataHelpers";
+import {
+  createRecurringNotification,
+  cancelNotifications,
+} from "./helpers/notifications";
+import colors from "./helpers/colors";
 
 export default function App() {
   /*
@@ -44,7 +49,6 @@ export default function App() {
       (date.getMonth() + 1).toString().padStart(2, "0"), // months are 0-indexed
       date.getDate().toString().padStart(2, "0"),
     ];
-    console.log("what?", `${year}-${month}-${day}`);
     setCurrentDate(`${year}-${month}-${day}`);
     initCycleData();
   }, []);
@@ -60,6 +64,38 @@ export default function App() {
           label={currentDate}
           onUpdateCycleData={handleUpdateCycleData}
         />
+
+        {/* Debugging elements */}
+        <Pressable
+          onPress={() =>
+            createRecurringNotification(
+              "Checking in",
+              "Log your cycle today",
+              new Date(),
+              true
+            )
+          }
+          style={{
+            paddingHorizontal: 10,
+            paddingVertical: 10,
+            marginVertical: 10,
+            backgroundColor: colors.main,
+          }}
+        >
+          <Text style={{ color: colors.white }}>Create notification</Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => cancelNotifications()}
+          style={{
+            paddingHorizontal: 10,
+            paddingVertical: 10,
+            marginVertical: 10,
+            backgroundColor: colors.main,
+          }}
+        >
+          <Text style={{ color: colors.white }}>Cancel notifications</Text>
+        </Pressable>
       </View>
     </View>
   );

@@ -10,8 +10,6 @@ A React Native app for _very_ basic period tracking.
 
   - You may need install Java and set the `$JAVA_HOME` environment variable, follow the steps here (but use openjdk-11-jdk): https://kontext.tech/article/621/install-open-jdk-on-wsl
 
-- To view logs (via `console.log()`, `console.warn()`), run `react-native log-android`
-
 ## Debugging local Android in Windows
 
 References:
